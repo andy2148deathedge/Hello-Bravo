@@ -17,6 +17,38 @@
   font-size: 28px;
 }
 
+.revenue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.revenue-header h1 {
+  margin: 0;
+}
+
+.reload-button {
+  padding: 8px 16px;
+  border: 1px solid #1a81b4;
+  border-radius: 4px;
+  background: white;
+  color: #1a81b4;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.reload-button:hover:not(:disabled) {
+  background: #1a81b4;
+  color: white;
+}
+
+.reload-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .revenue-content h2 {
   margin: 0 0 20px 0;
   color: #555;

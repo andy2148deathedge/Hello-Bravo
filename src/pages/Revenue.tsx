@@ -43,7 +43,16 @@ const Revenue: React.FC = () => {
   return (
     <div className="revenue">
       <div className="revenue-container">
-        <h1>收益查詢</h1>
+        <div className="revenue-header">
+          <h1>收益查詢</h1>
+          <button
+            className="reload-button"
+            onClick={loadDataset}
+            disabled={loading}
+          >
+            {loading ? "載入中..." : "重新載入"}
+          </button>
+        </div>
         <div className="revenue-content">
           {musicianRevenue && (
             <div className="revenue-summary">
