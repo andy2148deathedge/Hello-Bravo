@@ -3,8 +3,16 @@ import { useRevenueStore } from "../stores/revenueStore";
 import "./Revenue.css";
 
 const Revenue: React.FC = () => {
-  const { dataset, musicianRevenue, loading, error, loadDataset, clearError } =
-    useRevenueStore();
+  const {
+    dataset,
+    musicianRevenue,
+    loading,
+    error,
+    isStale,
+    loadDataset,
+    loadDatasetWithCache,
+    clearError,
+  } = useRevenueStore();
 
   // 使用 useRef 保存最後點擊時間，實現節流功能
   const lastClickTime = useRef(0);
@@ -15,15 +23,15 @@ const Revenue: React.FC = () => {
     const now = Date.now();
     // 如果現在時間 - 最後點擊時間 >= 設定好的節流延遲時間常數，則執行載入資料集
     if (now - lastClickTime.current >= THROTTLE_DELAY) {
-      loadDataset();
+      loadDatasetWithCache();
       lastClickTime.current = now;
     }
-  }, [loadDataset]);
+  }, [loadDatasetWithCache]);
 
-  // 組件掛載時自動載入資料集
+  // 組件掛載時自動載入資料集（使用快取）
   useEffect(() => {
-    loadDataset();
-  }, [loadDataset]);
+    loadDatasetWithCache();
+  }, [loadDatasetWithCache]);
 
   if (loading) {
     return (
@@ -60,13 +68,23 @@ const Revenue: React.FC = () => {
       <div className="revenue-container">
         <div className="revenue-header">
           <h1>收益查詢</h1>
-          <button
-            className="reload-button"
-            onClick={throttledLoadDataset}
-            disabled={loading}
-          >
-            {loading ? "載入中..." : "重新查詢"}
-          </button>
+          <div className="revenue-actions">
+            <button
+              className="reload-button"
+              onClick={throttledLoadDataset}
+              disabled={loading}
+            >
+              {loading ? "載入中..." : "重新查詢"}
+            </button>
+            {isStale && (
+              <span
+                className="stale-indicator"
+                title="顯示快取資料，背景更新中"
+              >
+                🔄 快取資料
+              </span>
+            )}
+          </div>
         </div>
         <div className="revenue-content">
           {musicianRevenue && (
