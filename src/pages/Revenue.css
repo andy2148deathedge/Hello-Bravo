@@ -1,38 +1,197 @@
 .revenue {
-  min-height: calc(100vh - 200px);
-  padding: 2rem 0;
-  background-color: #f8f9fa;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .revenue-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.revenue h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-}
-
-.revenue-content {
   background: white;
-  padding: 3rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.revenue-container h1 {
+  margin: 0 0 24px 0;
+  color: #333;
+  font-size: 28px;
 }
 
 .revenue-content h2 {
-  color: #007bff;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+  margin: 0 0 20px 0;
+  color: #555;
+  font-size: 22px;
 }
 
-.revenue-content p {
+.revenue-content h3 {
+  margin: 20px 0 16px 0;
   color: #666;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 18px;
+}
+
+.revenue-content h4 {
+  margin: 16px 0 12px 0;
+  color: #777;
+  font-size: 16px;
+}
+
+.revenue-content h5 {
+  margin: 12px 0 8px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.revenue-content h6 {
+  margin: 8px 0 6px 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.revenue-summary {
+  margin-top: 24px;
+}
+
+.total-revenue {
+  margin: 16px 0;
+  padding: 12px;
+  background: #e8f5e8;
+  border: 1px solid #c3e6c3;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.works-list {
+  margin-top: 20px;
+}
+
+.works-list h4 {
+  margin-bottom: 16px;
+}
+
+.works-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-item {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.work-item .work-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a81b4;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.percentage {
+  font-size: 12px;
+  color: #666;
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+}
+
+.work-revenue {
+  margin: 12px 0;
+  padding: 8px;
+  background: #e8f4fd;
+  border: 1px solid #b3d9f2;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.royalty-details {
+  margin-top: 12px;
+}
+
+.royalty-details ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.royalty-details li {
+  margin: 4px 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.error-message {
+  padding: 16px;
+  background: #ffe6e6;
+  border: 1px solid #ffb3b3;
+  border-radius: 6px;
+  color: #cc0000;
+}
+
+.error-message button {
+  margin: 8px 8px 0 0;
+  padding: 6px 12px;
+  border: 1px solid #cc0000;
+  border-radius: 4px;
+  background: white;
+  color: #cc0000;
+  cursor: pointer;
+}
+
+.error-message button:hover {
+  background: #cc0000;
+  color: white;
+}
+
+/* 桌機版橫向排列 */
+@media (min-width: 768px) {
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(300px, auto));
+    gap: 20px;
+    align-items: start;
+  }
+
+  .work-item {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+  }
+
+
+
+  .work-item .work-header {
+    flex-shrink: 0;
+  }
+
+  .work-item .work-revenue {
+    flex-shrink: 0;
+  }
+
+  .work-item .royalty-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .work-item .royalty-details ul {
+    flex: 1;
+    min-height: 0;
+  }
 }
