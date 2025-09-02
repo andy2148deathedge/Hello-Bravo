@@ -20,16 +20,19 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <h1 className="logo">Hello Bravo</h1>
+        <h1 className="logo">Bravo</h1>
         <nav className="nav">
           <Link to="/" className="nav-link">
             首頁
           </Link>
-          <Link to="/user" className="nav-link">
+          {/* <Link to="/user" className="nav-link">
             用戶
-          </Link>
+          </Link> */}
           <Link to="/state" className="nav-link">
             狀態
+          </Link>
+          <Link to="/revenue" className="nav-link">
+            收益查詢
           </Link>
         </nav>
         <div className="auth-section">

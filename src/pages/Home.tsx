@@ -18,7 +18,7 @@ const Home: React.FC = () => {
     <div className="home">
       <div className="home-container">
         <h1>歡迎來到首頁</h1>
-        <p>這是一個簡單的 demo 網站首頁。</p>
+        <p>demo 網站首頁。</p>
 
         {!isAuthenticated ? (
           <div className="login-section">
@@ -42,14 +42,17 @@ const Home: React.FC = () => {
           <div className="welcome-section">
             <h2>歡迎回來, {user}!</h2>
             <p>您現在可以訪問受保護的頁面了</p>
-            <div className="protected-links">
+            {/* <div className="protected-links">
               <a href="/user" className="protected-link">
                 前往用戶頁面
               </a>
               <a href="/state" className="protected-link">
                 前往狀態頁面
               </a>
-            </div>
+              <a href="/revenue" className="protected-link">
+                前往收益查詢頁面
+              </a>
+            </div> */}
           </div>
         )}
 
