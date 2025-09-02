@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { useRevenueStore } from "../stores/revenueStore";
 import "./Revenue.css";
 
@@ -6,6 +6,20 @@ const Revenue: React.FC = () => {
   const { dataset, musicianRevenue, loading, error, loadDataset, clearError } =
     useRevenueStore();
 
+  // 使用 useRef 保存最後點擊時間，實現節流功能
+  const lastClickTime = useRef(0);
+  const THROTTLE_DELAY = 1000; // 1秒內只能點擊一次
+
+  // 節流功能實作(throttle)：使用 useCallback 記憶化節流函數，避免每次渲染都重新創建
+  const throttledLoadDataset = useCallback(() => {
+    const now = Date.now();
+    if (now - lastClickTime.current >= THROTTLE_DELAY) {
+      loadDataset();
+      lastClickTime.current = now;
+    }
+  }, [loadDataset]);
+
+  // 組件掛載時自動載入資料集
   useEffect(() => {
     loadDataset();
   }, [loadDataset]);
@@ -32,7 +46,7 @@ const Revenue: React.FC = () => {
             <div className="error-message">
               <p>錯誤：{error}</p>
               <button onClick={clearError}>清除錯誤</button>
-              <button onClick={loadDataset}>重新載入</button>
+              <button onClick={throttledLoadDataset}>重新查詢</button>
             </div>
           </div>
         </div>
@@ -47,10 +61,10 @@ const Revenue: React.FC = () => {
           <h1>收益查詢</h1>
           <button
             className="reload-button"
-            onClick={loadDataset}
+            onClick={throttledLoadDataset}
             disabled={loading}
           >
-            {loading ? "載入中..." : "重新載入"}
+            {loading ? "載入中..." : "重新查詢"}
           </button>
         </div>
         <div className="revenue-content">
