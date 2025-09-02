@@ -21,6 +21,93 @@
   margin-bottom: 3rem;
 }
 
+.login-section {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  border: 1px solid #e9ecef;
+}
+
+.login-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.login-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.username-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+.username-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.login-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #2980b9;
+}
+
+.welcome-section {
+  background: #d4edda;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  border: 1px solid #c3e6cb;
+}
+
+.welcome-section h2 {
+  color: #155724;
+  margin-bottom: 1rem;
+}
+
+.welcome-section p {
+  color: #155724;
+  margin-bottom: 1.5rem;
+}
+
+.protected-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.protected-link {
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.protected-link:hover {
+  background-color: #218838;
+}
+
 .feature-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

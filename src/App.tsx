@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import User from "./pages/User";
 import State from "./pages/State";
+import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 
 const App: React.FC = () => {
@@ -15,8 +16,22 @@ const App: React.FC = () => {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/user" element={<User />} />
-            <Route path="/state" element={<State />} />
+            <Route
+              path="/user"
+              element={
+                <ProtectedRoute>
+                  <User />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/state"
+              element={
+                <ProtectedRoute>
+                  <State />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </main>
         <Footer />
