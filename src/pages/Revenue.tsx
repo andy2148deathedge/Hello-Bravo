@@ -8,11 +8,12 @@ const Revenue: React.FC = () => {
 
   // 使用 useRef 保存最後點擊時間，實現節流功能
   const lastClickTime = useRef(0);
-  const THROTTLE_DELAY = 1000; // 1秒內只能點擊一次
+  const THROTTLE_DELAY = 1000; // 節流延遲時間常數:表示 1 秒內只容許向後端查詢一次
 
-  // 節流功能實作(throttle)：使用 useCallback 記憶化節流函數，避免每次渲染都重新創建
+  // 節流功能實作(throttle)：使用 useCallback 記憶化節流查詢函數，避免每次渲染都重新創建
   const throttledLoadDataset = useCallback(() => {
     const now = Date.now();
+    // 如果現在時間 - 最後點擊時間 >= 設定好的節流延遲時間常數，則執行載入資料集
     if (now - lastClickTime.current >= THROTTLE_DELAY) {
       loadDataset();
       lastClickTime.current = now;
