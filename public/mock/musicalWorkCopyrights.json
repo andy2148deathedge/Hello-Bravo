@@ -1,0 +1,6 @@
+[
+  { "Id": 1, "MusicianId": 1, "MusicalWorkId": 1, "Percentage": 1.0 },
+  { "Id": 2, "MusicianId": 1, "MusicalWorkId": 2, "Percentage": 0.9 },
+  { "Id": 3, "MusicianId": 1, "MusicalWorkId": 3, "Percentage": 0.5 },
+  { "Id": 4, "MusicianId": 1, "MusicalWorkId": 4, "Percentage": 0.1 }
+]

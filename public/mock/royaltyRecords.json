@@ -1,0 +1,23 @@
+[
+  { "Id": 1,  "MusicalWorkCopyrightId": 1, "Amount": 120.50, "Date": "2024-06-15", "Source": "Spotify" },
+  { "Id": 2,  "MusicalWorkCopyrightId": 1, "Amount": 45.00,  "Date": "2024-06-30", "Source": "YouTube" },
+  { "Id": 3,  "MusicalWorkCopyrightId": 1, "Amount": 98.70,  "Date": "2024-07-15", "Source": "AppleMusic" },
+
+  { "Id": 4,  "MusicalWorkCopyrightId": 1, "Amount": 80.33,  "Date": "2024-06-15", "Source": "Spotify" },
+  { "Id": 5,  "MusicalWorkCopyrightId": 1, "Amount": 30.00,  "Date": "2024-06-30", "Source": "YouTube" },
+  { "Id": 6,  "MusicalWorkCopyrightId": 1, "Amount": 65.40,  "Date": "2024-07-15", "Source": "AppleMusic" },
+
+  { "Id": 7,  "MusicalWorkCopyrightId": 2, "Amount": 110.00, "Date": "2024-05-10", "Source": "Spotify" },
+  { "Id": 8,  "MusicalWorkCopyrightId": 2, "Amount": 38.00,  "Date": "2024-05-31", "Source": "YouTube" },
+  { "Id": 9,  "MusicalWorkCopyrightId": 2, "Amount": 90.25,  "Date": "2024-06-15", "Source": "AppleMusic" },
+
+  { "Id": 10, "MusicalWorkCopyrightId": 2, "Amount": 110.00, "Date": "2024-05-10", "Source": "Spotify" },
+  { "Id": 11, "MusicalWorkCopyrightId": 2, "Amount": 38.00,  "Date": "2024-05-31", "Source": "YouTube" },
+  { "Id": 12, "MusicalWorkCopyrightId": 2, "Amount": 90.25,  "Date": "2024-06-15", "Source": "AppleMusic" },
+
+  { "Id": 13, "MusicalWorkCopyrightId": 3, "Amount": 200.00, "Date": "2024-06-20", "Source": "Bandcamp" },
+  { "Id": 14, "MusicalWorkCopyrightId": 3, "Amount": 350.75, "Date": "2024-07-01", "Source": "Live" },
+
+  { "Id": 15, "MusicalWorkCopyrightId": 4, "Amount": 150.00, "Date": "2024-07-04", "Source": "Spotify" },
+  { "Id": 16, "MusicalWorkCopyrightId": 4, "Amount": 55.00,  "Date": "2024-07-31", "Source": "YouTube" }
+]
